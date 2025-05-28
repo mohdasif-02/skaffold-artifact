@@ -36,8 +36,7 @@ jobs:
           chmod +x skaffold
           sudo mv skaffold /usr/local/bin/
 
-      - name: Skaffold Build and Push
+      - name: Build & Push using Google Cloud Build
         run: |
-          skaffold build --push=true \
-            --default-repo=$REGION-docker.pkg.dev/$PROJECT_ID/$REPO
+          skaffold build --push=true
 
