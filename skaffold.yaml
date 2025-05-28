@@ -1,8 +1,26 @@
-apiVersion: skaffold/v2beta29
+apiVersion: skaffold/v4beta6
 kind: Config
+metadata:
+  name: my-demo-app
 build:
-  googleCloudBuild:
-    projectId: praveen-345
   artifacts:
     - image: demo-image
+      context: .
+      docker:
+        dockerfile: Dockerfile  # or your Dockerfile name
+  tagPolicy:
+    sha256: {}  # Tags image with SHA256 of contents
+  platforms: ["linux/amd64"]
+  # OPTIONAL: Use Google Cloud Build instead of local Docker
+  # cluster:
+  #   dockerConfig:
+  #     path: ~/.docker/config.json
+  # cloudBuild:
+  #   projectId: praveen-345
 
+# OPTIONAL if you're using skaffold deploy
+# deploy:
+#   kubectl:
+#     manifests:
+#       - k8s/*.yaml
+    
