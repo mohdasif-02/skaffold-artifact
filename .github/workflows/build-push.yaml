@@ -36,10 +36,10 @@ jobs:
           chmod +x skaffold
           sudo mv skaffold /usr/local/bin/
 
-- name: Build and Push Image with Skaffold
-  run: |
-    skaffold build \
-      --push=true \
-      --default-repo=us-central1-docker.pkg.dev/praveen-345/my-artifact-repo
+      - name: Build and Push Image with Skaffold
+        run: |
+         skaffold build \
+         --push=true \
+         --default-repo=us-central1-docker.pkg.dev/praveen-345/my-repo
 
 
