@@ -38,5 +38,5 @@ jobs:
 
       - name: Build & Push using Google Cloud Build
         run: |
-          skaffold build --push=true
+          skaffold build --push=true --default-repo=${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.ARTIFACT_REPO }}
 
