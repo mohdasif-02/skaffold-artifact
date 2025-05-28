@@ -36,7 +36,10 @@ jobs:
           chmod +x skaffold
           sudo mv skaffold /usr/local/bin/
 
-      - name: Build & Push using Google Cloud Build
-        run: |
-          skaffold build --push=true --default-repo=${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.ARTIFACT_REPO }}
+- name: Build and Push Image with Skaffold
+  run: |
+    skaffold build \
+      --push=true \
+      --default-repo=us-central1-docker.pkg.dev/praveen-345/my-artifact-repo
+
 
