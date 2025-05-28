@@ -1,9 +1,8 @@
-apiVersion: skaffold/v4beta6
+apiVersion: skaffold/v2beta29
 kind: Config
-metadata:
-  name: build-only
 build:
+  googleCloudBuild:
+    projectId: your-project-id
   artifacts:
-    - image: us-central1-docker.pkg.dev/YOUR_PROJECT/YOUR_REPO/demo-image
-  local:
-    push: false
+    - image: $REGION-docker.pkg.dev/your-project/your-repo/demo-image
+
