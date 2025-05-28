@@ -4,5 +4,5 @@ build:
   googleCloudBuild:
     projectId: praveen-345
   artifacts:
-    - image: $REGION-docker.pkg.dev/praveen-345/my-repo/demo-image
+    - image: demo-image
 
