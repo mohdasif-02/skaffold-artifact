@@ -2,7 +2,7 @@ apiVersion: skaffold/v2beta29
 kind: Config
 build:
   googleCloudBuild:
-    projectId: your-project-id
+    projectId: praveen-345
   artifacts:
-    - image: $REGION-docker.pkg.dev/your-project/your-repo/demo-image
+    - image: $REGION-docker.pkg.dev/praveen-345/my-repo/demo-image
 
