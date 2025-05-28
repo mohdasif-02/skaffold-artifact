@@ -1,0 +1,9 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+metadata:
+  name: build-only
+build:
+  artifacts:
+    - image: us-central1-docker.pkg.dev/YOUR_PROJECT/YOUR_REPO/demo-image
+  local:
+    push: false
